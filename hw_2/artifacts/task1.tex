@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage[russian]{babel}
+\begin{document}
+
+Примеры результатов запусков
+
+% [[1,2,3],[1,2]]
+\begin{tabular}{|c|c|c|}
+\hline
+1 & 2 & 3 \\
+\hline
+1 & 2 &  \\
+\hline
+\end{tabular}
+
+% [[1, 2, 3], [1, 2, 3, 4, 5, 6], [1], []]
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+1 & 2 & 3 &  &  &  \\
+\hline
+1 & 2 & 3 & 4 & 5 & 6 \\
+\hline
+1 &  &  &  &  &  \\
+\hline
+ &  &  &  &  &  \\
+\hline
+\end{tabular}
+
+% [[]]
+\begin{tabular}{|c|}
+\hline
+ \\
+\hline
+\end{tabular}
+
+% [[],['a'], ['b', 'c']]
+\begin{tabular}{|c|c|}
+\hline
+ &  \\
+\hline
+a &  \\
+\hline
+b & c \\
+\hline
+\end{tabular}
+
+
+\end{document}
