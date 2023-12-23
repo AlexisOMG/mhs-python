@@ -1,0 +1,108 @@
+$ python task1.py task1.py
+1	import sys
+2	from typing import TextIO
+3	def number_lines(file: TextIO, number_all_lines=False) -> None:
+4	    line_number = 1
+5	    for line in file:
+6	        if line.strip() or number_all_lines:
+7	            print(f'{line_number}\t{line}', end='')
+8	            line_number += 1
+9	def main():
+10	    number_all_lines = False
+11	    file_index = 1
+12	    if len(sys.argv) > 1 and sys.argv[1] == '-b':
+13	        if len(sys.argv) > 2 and sys.argv[2] == 'a':
+14	            number_all_lines = True
+15	            file_index = 3
+16	    if len(sys.argv) > file_index:
+17	        with open(sys.argv[file_index], 'r') as file:
+18	            number_lines(file, number_all_lines)
+19	    else:
+20	        number_lines(sys.stdin, number_all_lines)
+21	if __name__ == '__main__':
+22	    main()
+
+
+$ python task1.py -b a task1.py
+1	import sys
+2	from typing import TextIO
+3	
+4	def number_lines(file: TextIO, number_all_lines=False) -> None:
+5	    line_number = 1
+6	    for line in file:
+7	        if line.strip() or number_all_lines:
+8	            print(f'{line_number}\t{line}', end='')
+9	            line_number += 1
+10	
+11	def main():
+12	    number_all_lines = False
+13	    file_index = 1
+14	
+15	    if len(sys.argv) > 1 and sys.argv[1] == '-b':
+16	        if len(sys.argv) > 2 and sys.argv[2] == 'a':
+17	            number_all_lines = True
+18	            file_index = 3
+19	
+20	    if len(sys.argv) > file_index:
+21	        with open(sys.argv[file_index], 'r') as file:
+22	            number_lines(file, number_all_lines)
+23	    else:
+24	        number_lines(sys.stdin, number_all_lines)
+25	
+26	if __name__ == '__main__':
+27	    main()
+
+
+$  cat task1.py | python task1.py >> artifacts/task1_out.txt
+1	import sys
+2	from typing import TextIO
+3	def number_lines(file: TextIO, number_all_lines=False) -> None:
+4	    line_number = 1
+5	    for line in file:
+6	        if line.strip() or number_all_lines:
+7	            print(f'{line_number}\t{line}', end='')
+8	            line_number += 1
+9	def main():
+10	    number_all_lines = False
+11	    file_index = 1
+12	    if len(sys.argv) > 1 and sys.argv[1] == '-b':
+13	        if len(sys.argv) > 2 and sys.argv[2] == 'a':
+14	            number_all_lines = True
+15	            file_index = 3
+16	    if len(sys.argv) > file_index:
+17	        with open(sys.argv[file_index], 'r') as file:
+18	            number_lines(file, number_all_lines)
+19	    else:
+20	        number_lines(sys.stdin, number_all_lines)
+21	if __name__ == '__main__':
+22	    main()
+
+
+$ cat task1.py | python task1.py -b a >> artifacts/task1_out.txt
+1	import sys
+2	from typing import TextIO
+3	
+4	def number_lines(file: TextIO, number_all_lines=False) -> None:
+5	    line_number = 1
+6	    for line in file:
+7	        if line.strip() or number_all_lines:
+8	            print(f'{line_number}\t{line}', end='')
+9	            line_number += 1
+10	
+11	def main():
+12	    number_all_lines = False
+13	    file_index = 1
+14	
+15	    if len(sys.argv) > 1 and sys.argv[1] == '-b':
+16	        if len(sys.argv) > 2 and sys.argv[2] == 'a':
+17	            number_all_lines = True
+18	            file_index = 3
+19	
+20	    if len(sys.argv) > file_index:
+21	        with open(sys.argv[file_index], 'r') as file:
+22	            number_lines(file, number_all_lines)
+23	    else:
+24	        number_lines(sys.stdin, number_all_lines)
+25	
+26	if __name__ == '__main__':
+27	    main()

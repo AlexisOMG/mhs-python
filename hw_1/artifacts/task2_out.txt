@@ -1,0 +1,56 @@
+$ python task2.py task2.py
+            print(f'==> {file_name} <==')
+        
+        with open(file_name, 'r') as file:
+            tail(file, num_lines)
+
+        if i < len(sys.argv) - 1:
+            print()
+
+if __name__ == '__main__':
+    main()
+
+
+$ python task2.py task1.py task2.py
+==> task1.py <==
+            file_index = 3
+
+    if len(sys.argv) > file_index:
+        with open(sys.argv[file_index], 'r') as file:
+            number_lines(file, number_all_lines)
+    else:
+        number_lines(sys.stdin, number_all_lines)
+
+if __name__ == '__main__':
+    main()
+==> task2.py <==
+            print(f'==> {file_name} <==')
+        
+        with open(file_name, 'r') as file:
+            tail(file, num_lines)
+
+        if i < len(sys.argv) - 1:
+            print()
+
+if __name__ == '__main__':
+    main()
+
+
+$ cat task2.py | python task2.py
+    num_lines = 10
+    if len(sys.argv) == 1:
+        num_lines = 17
+        tail(sys.stdin, num_lines)
+    else:
+        for i, file_name in enumerate(sys.argv[1:], 1):
+            if len(sys.argv) > 2:
+                print(f'==> {file_name} <==')
+            
+            with open(file_name, 'r') as file:
+                tail(file, num_lines)
+
+            if i < len(sys.argv) - 1:
+                print()
+
+if __name__ == '__main__':
+    main()

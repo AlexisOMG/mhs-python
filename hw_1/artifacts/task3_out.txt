@@ -1,0 +1,13 @@
+$ python task3.py task3.py
+31 106 1004 task3.py
+
+
+$ python task3.py task1.py task2.py task3.py
+27 77 735 task1.py
+26 68 640 task2.py
+31 106 1004 task3.py
+84 251 2379 total
+
+
+$ cat task3.py | python task3.py
+31 106 1004
