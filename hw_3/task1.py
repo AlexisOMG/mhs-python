@@ -34,21 +34,21 @@ def main():
     matrix1 = Matrix(np_matrix1.tolist())
     matrix2 = Matrix(np_matrix2.tolist())
 
-    with open('artifacts/matrix+.txt', 'w') as file:
+    with open('artifacts/3.1/matrix+.txt', 'w') as file:
         file.write(str(matrix1))
         file.write('\n\n')
         file.write(str(matrix2))
         file.write('\n\n')
         file.write(str(matrix1 + matrix2))
 
-    with open('artifacts/matrix*.txt', 'w') as file:
+    with open('artifacts/3.1/matrix*.txt', 'w') as file:
         file.write(str(matrix1))
         file.write('\n\n')
         file.write(str(matrix2))
         file.write('\n\n')
         file.write(str(matrix1 * matrix2))
 
-    with open('artifacts/matrix@.txt', 'w') as file:
+    with open('artifacts/3.1/matrix@.txt', 'w') as file:
         file.write(str(matrix1))
         file.write('\n\n')
         file.write(str(matrix2))
