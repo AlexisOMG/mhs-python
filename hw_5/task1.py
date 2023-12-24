@@ -18,10 +18,17 @@ async def download_image(session: aiohttp.ClientSession, url: str, folder: str, 
 
 async def run(num_files: int, folder: str):
     base_url = 'https://www.thiswaifudoesnotexist.net/example-{}.jpg'
+    max_id = 100000 # get from script on www.thiswaifudoesnotexist.net
+    num_files = min(num_files, max_id)
+    
     async with aiohttp.ClientSession() as session:
         tasks = []
+        ids = set()
         for _ in range(num_files):
-            random_id = random.randint(0, 100000)
+            random_id = random.randint(0, max_id)
+            while random_id in ids:
+                random_id = random.randint(0, max_id)
+            ids.add(random_id)
             image_url = base_url.format(random_id)
             file_name = f'waifu_{random_id}.jpg'
             task = asyncio.ensure_future(download_image(session, image_url, folder, file_name))
